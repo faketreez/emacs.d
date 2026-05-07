@@ -7,7 +7,12 @@
 (setq mac-option-modifier 'meta)
 
 ;; Font
-(set-face-attribute 'default nil :font "Iosevka" :height 160)
+;; Font
+(cond
+ ((member "Iosevka" (font-family-list))
+  (set-face-attribute 'default nil :font "Iosevka" :height 160))
+ ((member "Iosevka Nerd Font" (font-family-list))
+  (set-face-attribute 'default nil :font "Iosevka Nerd Font Mono" :height 160))
 
 ;; Gruber Darker theme
 (require-package 'gruber-darker-theme)
