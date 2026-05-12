@@ -117,6 +117,7 @@
 (require 'init-j)
 (require 'init-nim)
 (require 'init-rust)
+(require 'init-yacc-lex)
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-docker)
