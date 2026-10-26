@@ -10,6 +10,11 @@
 
 (setq package-enable-at-startup nil)
 
+;; Work around bundled GCC's macOS version detection (caldwell/build-emacs#158).
+(when (and (eq system-type 'darwin) (native-comp-available-p))
+  (require 'comp)
+  (add-to-list 'native-comp-driver-options "-mmacosx-version-min=11"))
+
 ;; So we can detect this having been loaded
 (provide 'early-init)
 
